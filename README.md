@@ -10,3 +10,11 @@ pandas.DataFrame.plot, then Analyse baby names by sorting out all birth counts.*
 
 *analyse baby names by sorting out top 100 birth counts and group them by names to find
 out popular baby names*
+
+# Analysing Name Trends
+
+boy_name = top_100_names[top_100_names.Sex=='M']
+girl_name = top_100_names[top_100_names.Sex=='F']
+
+total_birth = top_100_names.pivot_table('Sex', index='Year', columns='Name', aggfunc= 'sum')
+boy_name.head()
